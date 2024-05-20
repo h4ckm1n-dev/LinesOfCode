@@ -10,14 +10,6 @@ This script is designed to recursively walk through a directory, count the lines
 - **Concurrency**: Uses goroutines and a wait group to process files concurrently for better performance.
 - **Formatted Output**: Displays the results in a nicely formatted ASCII table with colored output.
 
-## Script Breakdown
-- Main Function: Sets up the environment, initializes variables, and starts the directory walk.
-- countLines Function: Reads a file and counts the number of lines.
-- getFileType Function: Determines the file type and returns an appropriate icon and label.
-- processFile Function: Counts the lines of a given file and updates the total counts.
-- File Type Icons: A map associating file extensions with icons for better visual representation.
-- Concurrency Handling: Uses a wait group and mutex to safely count lines in files concurrently.
-
 ```md
 +--------------------------+--------------------------+
 | File Type                | Lines of Code            |
@@ -31,6 +23,14 @@ This script is designed to recursively walk through a directory, count the lines
 | Total                    | 3000                     |
 +--------------------------+--------------------------+
 ```
+
+## Script Breakdown
+- Main Function: Sets up the environment, initializes variables, and starts the directory walk.
+- countLines Function: Reads a file and counts the number of lines.
+- getFileType Function: Determines the file type and returns an appropriate icon and label.
+- processFile Function: Counts the lines of a given file and updates the total counts.
+- File Type Icons: A map associating file extensions with icons for better visual representation.
+- Concurrency Handling: Uses a wait group and mutex to safely count lines in files concurrently.
 
 ## Supported File Types
 
