@@ -1,4 +1,4 @@
-# Code Line Counter
+# LinesOfCode
 
 This script is designed to recursively walk through a directory, count the lines of code in various file types, and display the results in a formatted table. It recognizes a variety of programming languages and configuration files by their extensions and provides a summary of the lines of code per file type.
 
