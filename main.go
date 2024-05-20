@@ -123,14 +123,16 @@ func processFile(path string, fileCounts map[string]int, totalLines *int, mutex 
 	var fileType string
 	if codeFileExtensions[ext] || name == "Dockerfile" || name == "docker-compose.yml" {
 		fileType = getFileType(ext, name)
+		mutex.Lock()
+		*totalLines += lines
+		fileCounts[fileType] += lines
+		mutex.Unlock()
 	} else {
 		fileType = getFileType("other", name)
+		mutex.Lock()
+		fileCounts[fileType] += lines
+		mutex.Unlock()
 	}
-
-	mutex.Lock()
-	*totalLines += lines
-	fileCounts[fileType] += lines
-	mutex.Unlock()
 }
 
 func main() {
@@ -189,6 +191,9 @@ func main() {
 	fmt.Printf("+-%s-+-%s-+\n", strings.Repeat("-", fileTypeColWidth), strings.Repeat("-", linesColWidth))
 
 	for fileType, lines := range fileCounts {
+		if fileType == "❓ other" {
+			continue
+		}
 		color.Set(color.FgGreen)
 		fmt.Printf("|%-*s | ", fileTypeColWidth, fileType)
 		color.Set(color.FgCyan)
