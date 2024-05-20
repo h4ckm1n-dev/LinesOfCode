@@ -10,6 +10,28 @@ This script is designed to recursively walk through a directory, count the lines
 - **Concurrency**: Uses goroutines and a wait group to process files concurrently for better performance.
 - **Formatted Output**: Displays the results in a nicely formatted ASCII table with colored output.
 
+## Script Breakdown
+- Main Function: Sets up the environment, initializes variables, and starts the directory walk.
+- countLines Function: Reads a file and counts the number of lines.
+- getFileType Function: Determines the file type and returns an appropriate icon and label.
+- processFile Function: Counts the lines of a given file and updates the total counts.
+- File Type Icons: A map associating file extensions with icons for better visual representation.
+- Concurrency Handling: Uses a wait group and mutex to safely count lines in files concurrently.
+
+```md
++--------------------------+--------------------------+
+| File Type                | Lines of Code            |
++--------------------------+--------------------------+
+| 🐹 go                    | 1234                     |
+| 🐍 py                    | 567                      |
+| ✨ js                    | 890                      |
+| 📝 md                    | 234                      |
+| ❓ other                 | 45                       |
++--------------------------+--------------------------+
+| Total                    | 3000                     |
++--------------------------+--------------------------+
+```
+
 ## Supported File Types
 
 The script recognizes and counts lines for the following file types:
@@ -55,27 +77,7 @@ Ensure you have Go installed on your system. You can download it from [golang.or
 ```sh
 go run main.go
 ```
-## Script Breakdown
-- Main Function: Sets up the environment, initializes variables, and starts the directory walk.
-- countLines Function: Reads a file and counts the number of lines.
-- getFileType Function: Determines the file type and returns an appropriate icon and label.
-- processFile Function: Counts the lines of a given file and updates the total counts.
-- File Type Icons: A map associating file extensions with icons for better visual representation.
-- Concurrency Handling: Uses a wait group and mutex to safely count lines in files concurrently.
 
-```md
-+--------------------------+--------------------------+
-| File Type                | Lines of Code            |
-+--------------------------+--------------------------+
-| 🐹 go                    | 1234                     |
-| 🐍 py                    | 567                      |
-| ✨ js                    | 890                      |
-| 📝 md                    | 234                      |
-| ❓ other                 | 45                       |
-+--------------------------+--------------------------+
-| Total                    | 3000                     |
-+--------------------------+--------------------------+
-```
 ## Dependencies
 The script relies on the following packages:
 
