@@ -17,10 +17,9 @@ This script is designed to recursively walk through a directory, count the lines
 | 🐹 go                    | 1234                     |
 | 🐍 py                    | 567                      |
 | ✨ js                    | 890                      |
-| 📝 md                    | 234                      |
-| ❓ other                 | 45                       |
+| 📝 md                    | 234                      |                |
 +--------------------------+--------------------------+
-| Total                    | 3000                     |
+| Total                    | 2945                     |
 +--------------------------+--------------------------+
 ```
 
