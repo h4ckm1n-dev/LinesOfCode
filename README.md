@@ -2,6 +2,8 @@
 
 This script is designed to recursively walk through a directory, count the lines of code in various file types, and display the results in a formatted table. It recognizes a variety of programming languages and configuration files by their extensions and provides a summary of the lines of code per file type.
 
+A effort have been made to make the script as fast as possible using what go have to offer ;)
+
 ## Features
 
 - **Recursive Directory Walk**: The script traverses all subdirectories within the specified directory.
